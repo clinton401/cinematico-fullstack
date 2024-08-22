@@ -3,7 +3,8 @@ import Cookies from 'js-cookie'; // Install with `npm install js-cookie`
 import {useLocation} from "react-router-dom"
 const useAuth = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-const {pathname} = useLocation()
+const {pathname} = useLocation();
+console.log(Cookies.get('isAuthenticated'))
     const checkAuth = () => {
    
         const isAuth = Cookies.get('isAuthenticated') === 'true';
