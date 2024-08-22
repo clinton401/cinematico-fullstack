@@ -4,7 +4,6 @@ import {useLocation} from "react-router-dom"
 const useAuth = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 const {pathname} = useLocation();
-console.log(Cookies.get('isAuthenticated'))
     const checkAuth = () => {
    
         const isAuth = Cookies.get('isAuthenticated') === 'true';
