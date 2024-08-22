@@ -63,7 +63,7 @@ function Login() {
           email: "",
           password: "",
         });
-        window.location.href = data.redirectUrl;
+        // window.location.href = data.redirectUrl;
       
         
        
