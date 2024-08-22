@@ -456,23 +456,23 @@ const logout = (req, res, next) => {
         httpOnly: true,
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-        domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",    
+    domain: 'cinematico.vercel.app',
   path: '/'
     })
     res.cookie("refreshToken", "", {
         httpOnly: true,
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-         domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",    // allows the cookie to be sent cross-site
+    domain: 'cinematico.vercel.app',
   path: '/'
     });
     res.cookie("isAuthenticated", "", {
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-         domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",    // allows the cookie to be sent cross-site
+    domain: 'cinematico.vercel.app',
   path: '/'
     });
     
@@ -563,23 +563,23 @@ const deleteAccount = async(req, res, next) => {
         httpOnly: true,
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-         domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",   
+    domain: 'cinematico.vercel.app',
   path: '/'
     })
     res.cookie("refreshToken", "", {
         httpOnly: true,
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-         domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",    // allows the cookie to be sent cross-site
+    domain: 'cinematico.vercel.app',
   path: '/'
     });
     res.cookie("isAuthenticated", "", {
         maxAge: 0,
         secure: true,
-        sameSite: "None",
-         domain: 'https://cinematico.vercel.app', 
+        sameSite: "None",    // allows the cookie to be sent cross-site
+    domain: 'cinematico.vercel.app',
   path: '/'
     });
     res.status(200).json({ msg: 'User account deleted successfully' });
