@@ -61,7 +61,7 @@ function App() {
   }
 
   const API_KEY = import.meta.env.VITE_REACT_API_KEY;
-  const authUrl = import.meta.env.VITE_REACT_SERVER_URL;
+  const authUrl = "";
   const authParams = {
     method: "GET",
     headers: {
@@ -202,7 +202,7 @@ function App() {
     if (isLoggedIn) {
       fetchData(signal);
     } else {
-      // logOut(signal);
+      logOut(signal);
       setUserData(null);
     }
 
