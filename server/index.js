@@ -11,7 +11,7 @@ const {foundErrorsHandler, notFound} = require("./controllers/routeControllers")
 
 
 app.use(cors({
-    origin: "https://cinematic.vercel.com",
+    origin: "https://cinematico.vercel.app",
     credentials: true,
 }))
 app.use(express.json());
