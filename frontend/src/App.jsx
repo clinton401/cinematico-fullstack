@@ -202,7 +202,7 @@ function App() {
     if (isLoggedIn) {
       fetchData(signal);
     } else {
-      logOut(signal);
+      // logOut(signal);
       setUserData(null);
     }
 
