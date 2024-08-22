@@ -65,7 +65,7 @@ function Login() {
           password: "",
         });
         // window.location.href = data.redirectUrl;
-        window.location.reload()
+        // window.location.reload();
       
         
        
