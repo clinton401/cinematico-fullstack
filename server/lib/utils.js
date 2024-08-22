@@ -83,24 +83,49 @@ const cookiesResponse = (res, id) => {
             secure: true,
             maxAge: tokenMaxAge * 1000,
            sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
+    domain: '.cinematico.vercel.app',
+  path: '/'
         });
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure: true,
             maxAge: refreshMaxAge * 1000,
            sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
+    domain: '.cinematico.vercel.app',
+  path: '/'
         });
         res.cookie("isAuthenticated", "true", { 
             secure: true,
            sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/',
+    domain: '.cinematico.vercel.app',
+  path: '/',
             maxAge: refreshMaxAge * 1000
         })
+}
+const clearCookies = (res) => {
+    res.cookie("accessToken", "", {
+        httpOnly: true,
+        maxAge: 0,
+        secure: true,
+        sameSite: "None",   
+    domain: '.cinematico.vercel.app',
+  path: '/'
+    })
+    res.cookie("refreshToken", "", {
+        httpOnly: true,
+        maxAge: 0,
+        secure: true,
+        sameSite: "None",   
+    domain: '.cinematico.vercel.app',
+  path: '/'
+    });
+    res.cookie("isAuthenticated", "", {
+        maxAge: 0,
+        secure: true,
+        sameSite: "None",    // allows the cookie to be sent cross-site
+    domain: '.cinematico.vercel.app',
+  path: '/'
+    });
 }
 const verifyRefreshToken = (req, res, next) => {
     const refreshTokenSecret = process.env.JWT_REFRESH_TOKEN;
@@ -116,4 +141,4 @@ const verifyRefreshToken = (req, res, next) => {
 }
 
 
-module.exports = { errorHandler, newError, mongooseError, otpGenerator, createAccessToken, createRefreshToken,  tokenMaxAge, refreshMaxAge, verifyRefreshToken, cookiesResponse }
+module.exports = { errorHandler, newError, mongooseError, otpGenerator, createAccessToken, createRefreshToken,  tokenMaxAge, refreshMaxAge, verifyRefreshToken, cookiesResponse, clearCookies }

@@ -11,7 +11,7 @@ const {foundErrorsHandler, notFound} = require("./controllers/routeControllers")
 
 
 app.use(cors({
-    origin: "https://cinematico.netlify.app",
+    origin: "https://cinematico.vercel.app",
     credentials: true,
     
 }))

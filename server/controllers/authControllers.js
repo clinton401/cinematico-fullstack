@@ -1,4 +1,4 @@
-const { newError, errorHandler, mongooseError, otpGenerator, cookiesResponse } = require("../lib/utils");
+const { newError, errorHandler, mongooseError, otpGenerator, cookiesResponse, clearCookies } = require("../lib/utils");
 const User = require("../models/user");
 const mongoose = require("mongoose");
 const { cloneDeep } = require("lodash")
@@ -452,29 +452,7 @@ const login = async (req, res, next) => {
     }
 }
 const logout = (req, res, next) => {
-    res.cookie("accessToken", "", {
-        httpOnly: true,
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",    
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    })
-    res.cookie("refreshToken", "", {
-        httpOnly: true,
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    });
-    res.cookie("isAuthenticated", "", {
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    });
+    clearCookies(res);
     
     return res.status(200).json({ msg: 'Logout successful' });
 };
@@ -559,29 +537,7 @@ const deleteAccount = async(req, res, next) => {
 
     const user = await User.findByIdAndDelete(userId);
     if(!user) return next(newError("User not found", 404));
-    res.cookie("accessToken", "", {
-        httpOnly: true,
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",   
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    })
-    res.cookie("refreshToken", "", {
-        httpOnly: true,
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    });
-    res.cookie("isAuthenticated", "", {
-        maxAge: 0,
-        secure: true,
-        sameSite: "None",    // allows the cookie to be sent cross-site
-//     domain: 'cinematico.vercel.app',
-//   path: '/'
-    });
+    clearCookies(res)
     res.status(200).json({ msg: 'User account deleted successfully' });
 }
 
