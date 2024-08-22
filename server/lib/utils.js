@@ -83,7 +83,7 @@ const cookiesResponse = (res, id) => {
             secure: true,
             maxAge: tokenMaxAge * 1000,
            sameSite: "None",    // allows the cookie to be sent cross-site
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/'
         });
         res.cookie("refreshToken", refreshToken, {
@@ -91,13 +91,13 @@ const cookiesResponse = (res, id) => {
             secure: true,
             maxAge: refreshMaxAge * 1000,
            sameSite: "None",    // allows the cookie to be sent cross-site
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/'
         });
         res.cookie("isAuthenticated", "true", { 
             secure: true,
            sameSite: "None",    // allows the cookie to be sent cross-site
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/',
             maxAge: refreshMaxAge * 1000
         })
@@ -108,7 +108,7 @@ const clearCookies = (res) => {
         maxAge: 0,
         secure: true,
         sameSite: "None",   
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/'
     })
     res.cookie("refreshToken", "", {
@@ -116,14 +116,14 @@ const clearCookies = (res) => {
         maxAge: 0,
         secure: true,
         sameSite: "None",   
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/'
     });
     res.cookie("isAuthenticated", "", {
         maxAge: 0,
         secure: true,
         sameSite: "None",    // allows the cookie to be sent cross-site
-    domain: 'cinematico.vercel.app',
+    // domain: 'cinematico.vercel.app',
   path: '/'
     });
 }
