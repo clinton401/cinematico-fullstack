@@ -19,6 +19,11 @@ app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use("/auth", authRouter);
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to cinematico server",
+  })
+})
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 // });
