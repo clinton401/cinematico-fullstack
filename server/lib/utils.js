@@ -80,19 +80,25 @@ const cookiesResponse = (res, id) => {
  
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             maxAge: tokenMaxAge * 1000,
-            sameSite: "None"
+            sameSite: "None",
+             domain: 'https://cinematico.vercel.app', 
+  path: '/'
         });
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             maxAge: refreshMaxAge * 1000,
-            sameSite: "None"
+            sameSite: "None",
+             domain: 'https://cinematico.vercel.app', 
+  path: '/'
         });
         res.cookie("isAuthenticated", "true", { 
-            secure: process.env.NODE_ENV === 'production',
+            secure: true,
             sameSite: "None",
+             domain: 'https://cinematico.vercel.app', 
+  path: '/',
             maxAge: refreshMaxAge * 1000
         })
 }
