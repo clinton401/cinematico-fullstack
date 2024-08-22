@@ -28,6 +28,7 @@ function EmailOtpVerification() {
 
       const response = await fetch(`${authUrl}/auth/verify-otp`, {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
         },
@@ -76,6 +77,7 @@ function EmailOtpVerification() {
         `${authUrl}/auth/generate-verification-otp/${userId}`,
         {
           method: "POST",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },

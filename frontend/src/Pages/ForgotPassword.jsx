@@ -56,6 +56,7 @@ function ForgotPassword() {
         `${authUrl}/auth/forgot-password`,
         {
           method: "POST",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },
@@ -106,6 +107,7 @@ function ForgotPassword() {
         `${authUrl}/auth/reset-password`,
         {
           method: "POST",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },
@@ -154,6 +156,7 @@ function ForgotPassword() {
         `${authUrl}/auth/forgot-password`,
         {
           method: "POST",
+          credentials: 'include',
           headers: {
             "Content-Type": "application/json",
           },

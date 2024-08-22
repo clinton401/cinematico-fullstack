@@ -47,6 +47,7 @@ const navigate = useNavigate();
       setIsLoading(true)
       const response = await fetch(`${authUrl}/auth/register`, {
         method: "POST", // Use POST for registration
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
         },

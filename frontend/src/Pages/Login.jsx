@@ -41,7 +41,8 @@ function Login() {
     try {
       setIsLoading(true);
       const response = await fetch(`${authUrl}/auth/login`, {
-        method: "POST", // Use POST for registration
+        method: "POST",
+        credentials: 'include', // Use POST for registration
         headers: {
           "Content-Type": "application/json",
         },
