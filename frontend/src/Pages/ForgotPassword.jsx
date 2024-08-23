@@ -256,7 +256,7 @@ function ForgotPassword() {
             animate={"visible"}
             exit="exit"
             key="modal"
-            className="w-full fixed top-0 left-0 items-center flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
+            className="w-full fixed top-0 left-0 px-5half items-center flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
           >
             <form
               className="w-full max-w-[400px]  shadow-lg text-white  bg-black  rounded-md flex flex-col gap-6 p-4"

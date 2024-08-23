@@ -209,7 +209,7 @@ async function verifyEmail() {
 
 
 
-    return <main className="w-full min-h-dvh text-white pt-[150px] pb-10 flex flex-col gap-10 items-center   ">
+    return <main className="w-full min-h-dvh text-white pt-[150px] px-5half pb-10 flex flex-col gap-10 items-center   ">
         {userData ? <><section className="flex flex-col gap-4 items-center"> <h2 className="text-3xl font-black font-cinzel">User Details</h2>
         <ul className="flex gap-2 flex-col">
             <li>Username: {userData.username}</li>
@@ -233,7 +233,7 @@ async function verifyEmail() {
             animate={"visible"}
             exit="exit"
             key="modal"
-            className="w-full fixed top-0 left-0 items-center flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
+            className="w-full fixed top-0 left-0 px-5half items-center flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
           >
             <form
               className="w-full max-w-[400px]  shadow-lg text-white  bg-black  rounded-md flex flex-col gap-6 p-4"
@@ -326,7 +326,7 @@ async function verifyEmail() {
             animate={"visible"}
             exit="exit"
             key="modal"
-            className="w-full fixed top-0 left-0 items-center j flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
+            className="w-full fixed top-0 left-0 items-center px-5half flex-col gap-6 blurred3 z-[300] flex  justify-center  min-h-dvh"
           >
           <div className="w-full max-w-[400px]  shadow-lg text-white  bg-black  rounded-md flex flex-col gap-4 p-4">
           <h3 className="font-cinzel text-2xl font-black">Are you absolutely sure?</h3>
