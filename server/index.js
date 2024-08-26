@@ -10,7 +10,7 @@ const { foundErrorsHandler, notFound } = require("./controllers/routeControllers
 
 // CORS configuration
 app.use(cors({
-    origin: "http://localhost:8188",
+    origin: "https://cinematico.up.railway.app",
     credentials: true,
 }));
 
