@@ -8,31 +8,31 @@ const authRouter = require("./routes/authRouter");
 const apiRouter = require("./routes/apiRouter");
 const { foundErrorsHandler, notFound } = require("./controllers/routeControllers");
 
-// CORS configuration
+
 app.use(cors({
     origin: "https://cinematico.up.railway.app",
     credentials: true,
 }));
 
 
-// Middleware
+
 app.use(express.json());
 app.use(cookieParser());
 
-// Serve static files
+
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // API routes
-app.use("/auth", authRouter);
-// Uncomment if you have API routes
+
 // app.use("/api", apiRouter);
 
-// Serve React application
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
+app.use("/auth", authRouter);
 
-// Error handling
+
 app.all("*", notFound);
 app.use(foundErrorsHandler);
 

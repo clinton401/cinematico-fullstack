@@ -199,6 +199,9 @@ function Home() {
       
     }
   }
+  function refreshHandler() {
+    window.location.reload();
+  }
   
   return (
     <main className="   pb-10   text-white  max w-full ">
