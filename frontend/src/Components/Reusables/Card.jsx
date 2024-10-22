@@ -18,7 +18,7 @@ function Card({ title, img, year, type, id }) {
         <LazyImages
           imageUrl={img}
           title={title}
-          styles="w-full aspect-[1/0.9] object-center	 object-cover	mb-[10px] rounded "
+          styles="w-full aspect-square object-center	 object-cover	mb-[10px] rounded "
         />
       </Suspense>
     

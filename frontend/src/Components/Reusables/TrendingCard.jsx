@@ -17,7 +17,7 @@ function TrendingCard({title, img, year, type, id, count}) {
         <LazyImages
           imageUrl={img}
           title={title}
-          styles="w-full aspect-[1/0.8] max-h-[500px] object-center	 object-cover	mb-[10px] rounded "
+          styles="w-full aspect-[1/0.65] max-h-[500px] object-center	 object-cover	mb-[10px] rounded "
         />
       </Suspense>
       
