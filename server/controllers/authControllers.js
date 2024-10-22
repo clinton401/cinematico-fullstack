@@ -1,7 +1,8 @@
 const { newError, errorHandler, mongooseError, otpGenerator, cookiesResponse, clearCookies } = require("../lib/utils");
 const User = require("../models/user");
 const mongoose = require("mongoose");
-const { cloneDeep } = require("lodash")
+const { cloneDeep } = require("lodash");
+const { OAuth2Client } = require('google-auth-library');
 const { genPassword, validatePassword } = require("../lib/passwordUtils");
 const sendEmail = require("../lib/nodemailer");
 const NewPasswordOtp = require("../models/forgotPasswordOtpModel");
