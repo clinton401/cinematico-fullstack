@@ -1,0 +1,1 @@
+import{j as e,N as t}from"./index-PY5ovYXI.js";function n(){return e.jsx("section",{className:"w-full flex items-center px-[2.5%]  flex-col gap-4 justify-center ipad:max-h-[1300px] h-dvh min-h-[500px] ",children:e.jsx(t,{})})}export{n as default};
